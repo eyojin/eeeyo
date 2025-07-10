@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* 산리오 사이트 메인 페이지 미디어쿼리 - main_media.css */
+
+/************ 미디어쿼리 ************/
+
+/****** 1024px 이하 미디어쿼리 시작 ******/
+@media screen and (max-width: 1024px) {
+    /* 모바일 햄버거 버튼 보이게하기 */
+    .gnb-mob{
+        display: block;
+    }
+
+  /* GNB메뉴 변경하기 */
+  .gnb {
+    position: fixed;
+    top: 80px;
+    /* 오른쪽 바깥에 나가있음! */
+    left: 100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: white;
+
+    /* 트랜지션으로 애니메이션 설정
+    transition: 속성 시간 이징 지연시간 */
+    transition: left .6s ease-out;
+  }
+  /* .gnb에 클래스 on을 주면 left값 0
+  메뉴가 오른쪽에서 왼쪽을 들어옴! */
+  .gnb.on{
+    left: 0;
+  }
+  /* GNB 플렉스 ul요소 변경 */
+  .gnb > ul {
+    flex-direction: column;
+    gap: 3vh;
+    font-size: 5vw;
+  }
+
+  /* 배너 DT용 트랜스폼으로 윗쪽이동하기 */
+  .banner img:first-child {
+    /* 트랜스폼 Y축위치이동 */
+    translate: 0 -150%;
+    /* 가로크기 사이즈 적응 */
+    max-width: 100%;
+    /* 세로크기는 자동으로 전환 */
+    height: auto;
+    /* 투명도 0 */
+    opacity: 0;
+  }
+  /* 배너 모바일용 트랜스폼으로 아랫쪽이동하기 */
+  .banner img:last-child {
+    /* 트랜스폼 Y축위치이동 */
+    translate: -50% -50%;
+    /* 가로크기 사이즈 적응 */
+    max-width: 80%;
+    /* 세로크기는 자동으로 전환 */
+    height: auto;
+    /* 투명도 1 */
+    opacity: 1;
+  }
+
+  /* 캐릭터 리스트 영문 타이틀 안보이게 하기 */
+  .cat-list h2 {
+    display: none;
+  }
+} /****** 1024px 이하 미디어쿼리 종료 ******/
+
+/****** 800px 이하 미디어쿼리 시작 ******/
+@media screen and (max-width: 800px) {
+  /* 캐릭터 리스트 한줄에 2개씩 보이게 하기 */
+  .cat-list ul li {
+    /* 한 줄에 2개씩 나오게 설정 */
+    flex: 0 0 50%;
+    width: 50%;
+    /* 오른쪽 마진 제거 */
+    margin-right: 0;
+    /* 아래쪽 간격 추가 */
+    margin-bottom: 2rem;
+  }
+  /* 컴퍼니 리스트 한줄에 한개씩 보이기 */
+  .com-type-list{
+    /* 한 줄에 1개씩 나오게 설정 */
+    flex: 0 0 100%;
+    width: 100%;
+    /* 아래쪽 간격 추가 */
+    margin-bottom: 2rem;
+  }
+  /* 컴퍼니 리스트 타이틀 크기 조정 */
+  .com-type-list h3 {
+    font-size: 1.8rem;
+    /* 타이틀과 내용 사이 간격 */
+    line-height: 1.4;
+  }
+  /* 컴퍼니 리스트 내용 숨기기  */
+  .com-type-list p {
+    display: none;
+  }
+  
+
+}
+/****** 800px 이하 미디어쿼리 종료 ******/
