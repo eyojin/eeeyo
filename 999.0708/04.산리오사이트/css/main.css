@@ -279,7 +279,7 @@ h1.logo img {
   /* flex-direction: column; */
   align-items: center;
   text-align: center;
-  padding-bottom: 10rem;
+  padding-bottom: 20rem;
 }
 /* 공통 타이틀 */
 .com-type-list h3 {
@@ -296,32 +296,66 @@ h1.logo img {
 }
 /* 2-5. 플레이스영역 */
 #main-area .place {
+  /* 하단 패딩 밀어서 박스 높이 증가 */
+  padding-bottom: 30vh;
+  /* box를 채우는 background image */
+  background: url(../images/bg_shop.jpg) no-repeat center / cover;
+
 }
 /* 2-6. 컨텍어스영역 */
 .contact-us {
+  background-color: var(--contact-area-color);
+
 }
 
 /* 3. 컨텍어스 영역 */
 /* 3-1.컨텍어스 내용박스 부모 */
 .map-info {
+  display: flex;
+  height: 350px;
+  margin-top: 50px;
 }
 /* 컨텍어스 자식 파티션 박스 등분할 */
-.map-info > div {
+.map-info > div { 
+  flex: 1 ;
+ /*  최소 너비 설정 
+  min-width: 300px;
+  박스사이 간격 
+  padding: 2rem;
+  box-sizing: border-box; */
 }
 /* 3-2. 지도박스 */
 .map-box {
+ 
 }
 .map-box iframe {
+  /* iframed의 기본보더 없앰 */
+  border: none;
+   /* 지도를 본 박스에 꽉차게함 */
+  width: 100%;
+  height: 100%;
+  border-radius: 40px 0 0 40px;
 }
 
 /* 3-3. 정보박스 */
 .info-box {
-}
+  /* 부모자격 */
+  position: relative;
+  background-color: #fff;
+  border-radius: 0 40px 40px 0;}
+
 /* 키티 이미지 앱솔루트! */
 .info-box img {
+  /* 오른쪽 아래 위치 */
+  position: absolute;
+  bottom: -55px;
+  right: 030px;
 }
 /* 한글주소 : h3 */
 .info-box h3 {
+  /* 글자크기 2.5 */
+  font-size: 2.5rem;
+  line-height: 1.5;
 }
 /* 영문주소 : address */
 .info-box address {
